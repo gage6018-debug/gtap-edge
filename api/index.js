@@ -1,11 +1,1 @@
-export default {
-  fetch(req) {
-    const { pathname } = new URL(req.url);
-    if (pathname === '/ping') {
-      return new Response(JSON.stringify({ pong: Date.now() }), {
-        headers: { 'content-type': 'application/json' }
-      });
-    }
-    return new Response('GORILLA LIVES');
-  }
-};
+export default { fetch: (req) => new URL(req.url).pathname === '/ping' ? new Response(JSON.stringify({ pong: Date.now() }), { headers: { 'content-type': 'application/json' } }) : new Response('GORILLA LIVES') };
