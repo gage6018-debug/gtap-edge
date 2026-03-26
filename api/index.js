@@ -1,1 +1,2 @@
 export default { fetch: (req) => new URL(req.url).pathname === '/ping' ? new Response(JSON.stringify({ pong: Date.now() }), { headers: { 'content-type': 'application/json' } }) : new Response('GORILLA LIVES') };
+Commit
